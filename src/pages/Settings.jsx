@@ -1,0 +1,9 @@
+function Setting(){
+    return(
+        <div>
+
+        <h1>Admin Setting</h1>
+        </div>
+    )
+}
+export default Setting;

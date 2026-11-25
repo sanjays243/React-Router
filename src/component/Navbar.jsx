@@ -1,5 +1,5 @@
 import React from 'react'
-import {Link, useNavigate} from "react-router-dom"
+import {Link, NavLink, useNavigate} from "react-router-dom"
 const Navbar = () => {
     const navigate=useNavigate()
   return (
@@ -10,8 +10,9 @@ const Navbar = () => {
         </div>
         <div className='menu'>
             <Link to="/">Home</Link>
-            <Link to="/about">About</Link>
-            <Link to="/contact">Contact</Link>
+
+            <NavLink to="/about" className={({isActive})=>isActive? "active":""}>About</NavLink>
+            <NavLink to="/contact">Contact</NavLink>
             <Link to="/login">Login</Link>
         </div>
     </div>

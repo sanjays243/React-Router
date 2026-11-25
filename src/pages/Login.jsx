@@ -1,12 +1,19 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 
 const Login = () => {
+  const [name,setName]=useState("")
+  const [password,setPassword]=useState("")
     const navigate=useNavigate()
 
     function handleSubmit(e){
         e.preventDefault()
-        navigate("/")
+        navigate("/dashboard", {
+      state: {
+        username: "Sanjay",
+        role: "Frontend Developer"
+      }
+    });
     }
   return (
     <div>
@@ -23,7 +30,8 @@ const Login = () => {
         <label htmlFor="password"> Password : </label>
         <input type="password" 
         id="password"
-        placeholder='Enter your password' />
+        placeholder='Enter your password'
+         />
 
         <br />
         <button>Submit</button>
